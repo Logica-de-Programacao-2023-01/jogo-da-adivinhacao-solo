@@ -8,45 +8,38 @@ import (
 
 func main() {
 
-	var jogarNovamente string
-	var tentativas []int
+	var palpite int
+	var x string
 
-	for contador2 := 0; ; contador2++ {
+	for contador := 0; ; contador++ {
 
 		rand.Seed(time.Now().UnixNano())
 		resposta := rand.Intn(100) + 1
 
-		var palpite int
-
-		numTentativas := 0
-
-		for contador3 := 0; ; contador3++ {
+		for contador2 := 0; ; contador2++ {
 
 			fmt.Print("Digite um número entre 1 e 100: ")
 			fmt.Scan(&palpite)
 
-			numTentativas++
-
 			if palpite > resposta {
-				fmt.Println("O número é menor que", palpite)
+				fmt.Println("O número é menor que", resposta)
 			} else if palpite < resposta {
-				fmt.Println("O número é maior que", palpite)
+				fmt.Println("O número é maior que", resposta)
 			} else {
-				fmt.Printf("Parabéns, Você acertou! Você utilizou %d tentativas\n", numTentativas)
+				fmt.Printf("Parabéns, Você acertou! Você utilizou %d tentativas\n", contador2)
 				break
 			}
 		}
 
-		tentativas = append(tentativas, numTentativas)
-
 		fmt.Print("Deseja jogar novamente (s/n)? ")
-		fmt.Scan(&jogarNovamente)
+		fmt.Scan(&x)
 
-		if jogarNovamente != "s" {
+		if x != "s" {
 			break
-			
+
 		}
-		fmt.Printf("Você jogou %d jogos, as tentativas desses jogos são de %d tentativas\n", contador2, numTentativas)
+		fmt.Printf("Você jogou %d jogos, as tentativas desses jogos são de %d tentativas\n", contador, contador2)
+	
 
 	}
 
