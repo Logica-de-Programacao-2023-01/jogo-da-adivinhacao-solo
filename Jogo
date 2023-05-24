@@ -31,15 +31,18 @@ func main() {
 				fmt.Println("O número é maior que", palpite)
 			} else {
 				fmt.Printf("Parabéns, Você acertou! Você utilizou %d tentativas\n", contador2)
+				liscon = append(liscon, contador)
 				break
 			}
 		}
-
+		liscon2 = append(liscon2, contador2)
 		fmt.Print("Deseja jogar novamente (s/n)? ")
 		fmt.Scan(&x)
 
 		if x != "s" {
-		fmt.Printf("Você jogou %d jogos, as tentativas desses jogos são de %d tentativas\n", contador, contador2)
+		for i := 0; i <= contador; i++ {	
+		fmt.Printf("O %d* jogo, você usou %d tentativas\n", liscon[i], liscon2[i])
+			}
 			break
 
 		}
