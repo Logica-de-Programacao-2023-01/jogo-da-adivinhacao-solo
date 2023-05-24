@@ -41,7 +41,7 @@ func main() {
 
 		if x != "s" {
 		for i := 0; i <= contador; i++ {	
-		fmt.Printf("O %d* jogo, você usou %d tentativas\n", liscon[i], liscon2[i])
+		fmt.Printf("O %dº jogo, você usou %d tentativas\n", liscon[i], liscon2[i])
 			}
 			break
 
