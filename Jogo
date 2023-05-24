@@ -28,9 +28,9 @@ func main() {
 			numTentativas++
 
 			if palpite > resposta {
-				fmt.Println("O número é maior que", palpite)
-			} else if palpite < resposta {
 				fmt.Println("O número é menor que", palpite)
+			} else if palpite < resposta {
+				fmt.Println("O número é maior que", palpite)
 			} else {
 				fmt.Printf("Parabéns, Você acertou! Você utilizou %d tentativas\n", numTentativas)
 				break
