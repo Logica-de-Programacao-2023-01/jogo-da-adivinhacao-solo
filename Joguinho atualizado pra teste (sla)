@@ -1,1 +1,53 @@
+package main
 
+// Jogo da Advinhação
+
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
+
+func main() {
+
+	var palpite, contador2 int // Criação das variavéis.
+	var x string
+
+	var liscon[]int
+	var liscon2[]int
+
+	for contador := 1; ; contador++ { // Primeiro loop. Gera um número aleatorio a cada novo jogo
+
+		rand.Seed(time.Now().UnixNano())
+		resposta := rand.Intn(100) + 1
+
+		for contador2 = 1; ; contador2++ { // Segundo loop. as jogadas de acerto dos numeros de 1 a 100
+
+			fmt.Print("Digite um número entre 1 e 100: ")
+			fmt.Scan(&palpite)
+
+			if palpite <= 0 || palpite >= 101 { // verificação
+				fmt.Printf("O caracter Digitado é invalido, ")
+			} else if palpite > resposta {
+				fmt.Println("O número é menor que", palpite)
+			} else if palpite < resposta {
+				fmt.Println("O número é maior que", palpite)
+			} else {
+				fmt.Printf("Parabéns, Você acertou! Você utilizou %d tentativas\n", contador2)
+				liscon = append(liscon, contador)
+				break
+			}
+		}
+		liscon2 = append(liscon2, contador2)
+
+		fmt.Print("Deseja jogar novamente (s/n)? ") // verificação de jogar novamente
+		fmt.Scan(&x)
+
+			 if x  == "n" {
+				for i := 0; i <= contador; i++ { // tentativas e jogos
+					fmt.Printf("O %dº jogo, você usou %d tentativas\n", liscon[i], liscon2[i])
+			}
+			break
+			}
+		}
+	}
